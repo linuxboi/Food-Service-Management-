@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/13"
+      fx:controller="com.mycompany.mavenproject2.controllers.MainController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Nouvelle commande"/>
+            <TextField fx:id="customerNameField" promptText="Nom du client"/>
+            <Button text="Créer commande" onAction="#handleNewOrder"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Ajouter produit"/>
+            <ComboBox fx:id="productComboBox" promptText="Sélectionner produit"/>
+            <Spinner fx:id="quantitySpinner"/>
+            <Button text="Ajouter à la commande" onAction="#handleAddProduct"/>
+        </VBox>
+    </HBox>
+
+    <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+        <VBox spacing="5">
+            <Label text="Commandes"/>
+            <TableView fx:id="orderTable" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Produits"/>
+            <TableView fx:id="productTable" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </SplitPane>
+</VBox>

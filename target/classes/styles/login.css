@@ -1,0 +1,88 @@
+/* General Styling */
+.root {
+    -fx-font-family: Arial, sans-serif;
+}
+
+/* VBox (Main Container) */
+.vbox {
+    -fx-background-color: #f4f4f4;
+}
+
+.vbox > .vbox {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-spacing: 15;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+}
+
+.label-bold {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+#errorLabel {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+/* Text Fields and Password Fields */
+.text-field, .password-field {
+    -fx-background-color: #fff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+    -fx-padding: 9; /* Adjust for border width */
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+.button:pressed {
+    -fx-background-color: #1976D2; /* Darker blue for pressed state */
+}
+
+/* Transparent Button (Create New Account) */
+.button:focus, .button:default {
+    -fx-border-color: transparent;
+}
+
+.button[style*="transparent"] {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2196F3;
+    -fx-underline: true;
+    -fx-padding: 5;
+}
+
+.button[style*="transparent"]:hover {
+    -fx-opacity: 0.8;
+}
+
+/* Responsive Padding for Inputs */
+.vbox > .text-field, .vbox > .password-field, .vbox > .button {
+    -fx-min-width: 300px;
+}

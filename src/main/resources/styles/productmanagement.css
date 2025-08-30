@@ -1,0 +1,100 @@
+/* General Styles */
+.root {
+    -fx-font-family: Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Top Section */
+.hbox {
+    -fx-alignment: center-left;
+}
+
+.hbox > Label {
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 0 0;
+}
+
+.hbox > Button {
+    -fx-background-radius: 5;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+}
+
+.hbox > Button:hover {
+    -fx-opacity: 0.9;
+}
+
+.hbox > Button:pressed {
+    -fx-background-color: #3e8e41; /* Slightly darker green for "pressed" effect */
+}
+
+/* Filter ComboBox */
+.combobox {
+    -fx-pref-height: 30;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f2f2f2;
+}
+
+.table-view .column-header-background:hover {
+    -fx-background-color: #e6e6e6;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #e0e0e0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #2196F3; /* Blue for selection */
+    -fx-text-fill: white;
+}
+
+/* Context Menu */
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d9d9d9;
+}
+
+.context-menu .menu-item {
+    -fx-padding: 5 15;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Bottom Section */
+.hbox > Label {
+    -fx-font-size: 14px;
+    -fx-padding: 0 10 0 0;
+}
+
+.hbox > Label:contains('Low Stock Items'), 
+.hbox > Label:contains('Out of Stock') {
+    -fx-text-fill: #e53935; /* Red for warnings */
+    -fx-font-weight: bold;
+}
+
+.hbox > Label:contains('Total Inventory Value') {
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+}
+
+.hbox {
+    -fx-alignment: center-left;
+}
+
+.region {
+    -fx-background-color: transparent;
+}

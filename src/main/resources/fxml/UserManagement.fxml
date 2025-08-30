@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/13"
+            fx:controller="com.mycompany.mavenproject2.controllers.UserManagementController">
+    
+    <top>
+        <HBox spacing="10" style="-fx-background-color: #2196F3; -fx-padding: 10;">
+            <Label text="User Management" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Add New User" onAction="#showAddUserDialog"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+                    <TableColumn fx:id="fullNameColumn" text="Full Name" prefWidth="200"/>
+                    <TableColumn fx:id="roleColumn" text="Role" prefWidth="100"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                </columns>
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem text="Edit User" onAction="#editUser"/>
+                            <MenuItem text="Reset Password" onAction="#resetPassword"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Delete User" onAction="#deleteUser"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/13"
+            fx:controller="com.mycompany.mavenproject2.controllers.AdminDashboardController">
+    
+    <top>
+        <VBox spacing="0">
+            <HBox spacing="10" style="-fx-background-color: #2196F3; -fx-padding: 10;">
+                <Label text="Admin Dashboard" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Manage Users" onAction="#showUserManagement" 
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white;"/>
+                <Button text="Manage Products" onAction="#showProductManagement"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white;"/>
+                <Button text="Logout" onAction="#handleLogout" 
+                        style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <ToolBar style="-fx-background-color: #f5f5f5;">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Filter Orders:"/>
+                    <ComboBox fx:id="orderStatusCombo" prefWidth="120"/>
+                    <Label text="Date Range:"/>
+                    <DatePicker fx:id="startDate"/>
+                    <Label text="to"/>
+                    <DatePicker fx:id="endDate"/>
+                    <Button text="Apply Filters" onAction="#applyFilters"/>
+                    <Button text="Reset Filters" onAction="#resetFilters"/>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.7">
+            <VBox spacing="10">
+                <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="80"/>
+                        <TableColumn fx:id="customerColumn" text="Customer" prefWidth="150"/>
+                        <TableColumn fx:id="totalColumn" text="Total" prefWidth="100"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem text="View Details" onAction="#viewOrderDetails"/>
+                                <MenuItem text="Print Receipt" onAction="#printReceipt"/>
+                                <SeparatorMenuItem />
+                                <Menu text="Change Status">
+                                    <items>
+                                        <MenuItem text="Preparing" onAction="#handlePreparingStatus"/>
+                                        <MenuItem text="Ready" onAction="#handleReadyStatus"/>
+                                        <MenuItem text="Delivered" onAction="#handleDeliveredStatus"/>
+                                        <MenuItem text="Cancel Order" onAction="#handleCancelOrder"/>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+                
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Mark as Preparing" onAction="#handlePreparingStatus"
+                            style="-fx-background-color: #ffc107;"/>
+                    <Button text="Mark as Ready" onAction="#handleReadyStatus"
+                            style="-fx-background-color: #17a2b8;"/>
+                    <Button text="Mark as Delivered" onAction="#handleDeliveredStatus"
+                            style="-fx-background-color: #28a745;"/>
+                    <Button text="Cancel Order" onAction="#handleCancelOrder"
+                            style="-fx-background-color: #dc3545;"/>
+                </HBox>
+            </VBox>
+            
+            <VBox spacing="10">
+                <Label text="Order Details" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+                <ListView fx:id="orderItemsList" VBox.vgrow="ALWAYS"/>
+                <VBox fx:id="orderDetailsBox" spacing="5" style="-fx-padding: 10; -fx-background-color: #f8f9fa;">
+                    <Label fx:id="customerDetailsLabel"/>
+                    <Label fx:id="orderDateLabel"/>
+                    <Label fx:id="orderTotalLabel" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="orderNotesArea" promptText="Add notes about this order..." 
+                             prefRowCount="3" wrapText="true"/>
+                    <Button text="Save Notes" onAction="#saveOrderNotes"/>
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+        <HBox spacing="20" style="-fx-padding: 10; -fx-background-color: #f8f9fa;">
+            <Label fx:id="totalOrdersLabel" text="Total Orders: 0"/>
+            <Label fx:id="pendingOrdersLabel" text="Pending: 0"/>
+            <Label fx:id="preparingOrdersLabel" text="Preparing: 0"/>
+            <Label fx:id="readyOrdersLabel" text="Ready: 0"/>
+            <Label fx:id="deliveredOrdersLabel" text="Delivered: 0"/>
+            <Label fx:id="cancelledOrdersLabel" text="Cancelled: 0"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalRevenueLabel" text="Total Revenue: $0.00" 
+                   style="-fx-font-weight: bold;"/>
+        </HBox>
+    </bottom>
+    
+    <padding>
+        <Insets top="0" right="10" bottom="10" left="10"/>
+    </padding>
+</BorderPane>

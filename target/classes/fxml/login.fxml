@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="20" alignment="CENTER" prefWidth="400" prefHeight="300"
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/13"
+      fx:controller="com.mycompany.mavenproject2.controllers.LoginController"
+      style="-fx-background-color: #f4f4f4;">
+    
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20px; -fx-border-color: #ddd;">
+        <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        
+        <Button text="Login" onAction="#handleLogin" 
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        
+        <Label fx:id="errorLabel" style="-fx-text-fill: red;"/>
+        
+        <Button text="Create new account" 
+                style="-fx-background-color: transparent; -fx-text-fill: #2196F3; -fx-underline: true;"
+                onAction="#handleRegister"/>
+    </VBox>
+</VBox>

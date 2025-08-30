@@ -1,0 +1,84 @@
+/* General Styling */
+.root {
+    -fx-font-family: Arial, sans-serif;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Container Styling */
+.register-container {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 10;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+/* Title Text Styling */
+.title-text {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-fill: #333;
+}
+
+/* Form Styling */
+.register-form {
+    -fx-spacing: 10;
+}
+
+.register-form > .text-field,
+.register-form > .password-field,
+.register-form > .text-area {
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.register-form > .text-field:focused,
+.register-form > .password-field:focused,
+.register-form > .text-area:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+}
+
+.register-form > .text-area {
+    -fx-pref-height: 70px;
+}
+
+/* Button Styling */
+.register-form > .button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.register-form > .button:hover {
+    -fx-opacity: 0.9;
+}
+
+.register-form > .button:pressed {
+    -fx-background-color: #1976D2;
+}
+
+.register-form > .button:last-of-type {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2196F3;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 1;
+}
+
+.register-form > .button:last-of-type:hover {
+    -fx-background-color: #E3F2FD;
+}
+
+/* Error Label Styling */
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+}

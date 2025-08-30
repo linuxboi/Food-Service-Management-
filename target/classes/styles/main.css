@@ -1,0 +1,112 @@
+/* General Styling */
+.root {
+    -fx-font-family: Arial, sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+/* VBox Styling */
+.vbox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+.vbox > .vbox {
+    -fx-spacing: 5;
+}
+
+/* HBox Styling */
+.hbox {
+    -fx-spacing: 10;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* TextField */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+    -fx-padding: 7; /* Adjust padding for thicker border */
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.combo-box:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+    -fx-padding: 7;
+}
+
+/* Spinner */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.spinner:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+.button:pressed {
+    -fx-background-color: #388E3C;
+}
+
+/* TableViews */
+.table-view {
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-background-color: white;
+}
+
+.table-view:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2;
+}
+
+/* SplitPane */
+.split-pane {
+    -fx-background-color: transparent;
+}
+
+.split-pane-divider {
+    -fx-background-color: #ddd;
+}
+
+.split-pane-divider:hover {
+    -fx-background-color: #2196F3;
+}

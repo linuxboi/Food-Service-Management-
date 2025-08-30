@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/13"
+            fx:controller="com.mycompany.mavenproject2.controllers.ProductManagementController">
+    
+    <top>
+        <VBox spacing="10">
+            <HBox spacing="10" style="-fx-background-color: #2196F3; -fx-padding: 10;">
+                <Label text="Product Management" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Add New Product" onAction="#showAddProductDialog"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <HBox spacing="10" style="-fx-padding: 10;">
+                <Label text="Filter by Category:"/>
+                <ComboBox fx:id="categoryFilter" prefWidth="200"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Manage Categories" onAction="#showCategoryManagement"
+                        style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <TableView fx:id="productsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200"/>
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="150"/>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="300"/>
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                <TableColumn fx:id="stockColumn" text="Stock" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem text="Edit Product" onAction="#editProduct"/>
+                        <MenuItem text="Adjust Stock" onAction="#adjustStock"/>
+                        <MenuItem text="Toggle Status" onAction="#toggleProductStatus"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Delete Product" onAction="#deleteProduct"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </center>
+    
+    <bottom>
+        <HBox spacing="20" style="-fx-padding: 10; -fx-background-color: #f5f5f5;">
+            <Label fx:id="totalProductsLabel" text="Total Products: 0"/>
+            <Label fx:id="lowStockLabel" text="Low Stock Items: 0" style="-fx-text-fill: #f44336;"/>
+            <Label fx:id="outOfStockLabel" text="Out of Stock: 0" style="-fx-text-fill: #f44336;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalValueLabel" text="Total Inventory Value: $0.00" style="-fx-font-weight: bold;"/>
+        </HBox>
+    </bottom>
+    
+    <padding>
+        <Insets top="0" right="10" bottom="10" left="10"/>
+    </padding>
+</BorderPane>

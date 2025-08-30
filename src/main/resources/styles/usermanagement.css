@@ -1,0 +1,99 @@
+/* General Styles */
+.root {
+    -fx-font-family: Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Top Section */
+.hbox {
+    -fx-alignment: center-left;
+}
+
+.hbox > Label {
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 0 0;
+}
+
+.hbox > Button {
+    -fx-background-radius: 5;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+}
+
+.hbox > Button:hover {
+    -fx-opacity: 0.9;
+}
+
+.hbox > Button:pressed {
+    -fx-background-color: #3e8e41; /* Slightly darker green for pressed state */
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f2f2f2;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header-background:hover {
+    -fx-background-color: #e6e6e6;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #e0e0e0;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #2196F3; /* Blue for selection */
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-alignment: center-left;
+    -fx-padding: 5;
+}
+
+/* Context Menu */
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d9d9d9;
+}
+
+.context-menu .menu-item {
+    -fx-padding: 5 15;
+    -fx-font-size: 13px;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* VBox (Center Section) */
+.vbox {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #d9d9d9;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5 15;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-opacity: 0.85;
+}
+
+.button:pressed {
+    -fx-background-color: #3e8e41; /* Darker green for press effect */
+}
